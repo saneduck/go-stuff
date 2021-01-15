@@ -15,7 +15,7 @@ func NewHello(l *log.Logger) *Hello {
   return &Hello { l }
 }
 
-func (h *Hello) ServeHTTP(rw *http.ResponseWriter, r *http.Request) {
+func (h *Hello) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
   log.Println("Hello => ServeHTTP")
   d, err := ioutil.ReadAll(r.Body)
   if err != nil {
